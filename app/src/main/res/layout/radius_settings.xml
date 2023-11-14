@@ -1,0 +1,42 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#bcbcbc"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/radiusEditText"
+        android:layout_width="369dp"
+        android:layout_height="61dp"
+        android:hint="Enter radius: Choose km or miles" />
+
+    <RadioGroup
+        android:id="@+id/unit_preference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/kilometers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilometers"/>
+
+        <RadioButton
+            android:id="@+id/miles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Miles"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="SAVE"
+        android:backgroundTint="@color/black"
+        android:textColor="#FFFFFF"/>
+</LinearLayout>

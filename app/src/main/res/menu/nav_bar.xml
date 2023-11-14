@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="HardcodedText"
+
+    android:background="#1429c7">
+
+
+
+    <item
+
+        android:id="@+id/Activity1"
+
+        android:title="Home" />
+
+
+
+    <item
+
+        android:id="@+id/Activity2"
+
+        android:title="Add Bird" />
+
+
+
+    <item
+
+        android:id="@+id/Activity3"
+
+        android:title="View Map" />
+
+    <item
+
+        android:id="@+id/Activity4"
+
+        android:title="FAQ" />
+
+    <item
+
+        android:id="@+id/Activity5"
+
+        android:title="How to Use" />
+
+    <item
+
+        android:id="@+id/Activity6"
+
+        android:title="Settings" />
+
+
+
+</menu>

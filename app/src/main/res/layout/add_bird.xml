@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="15dp"
+    android:layout_width="match_parent"
+    android:background="@drawable/rounded_corner"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="15dp"-->
+        <!--            android:background="#DFDFDF"-->
+        <!--            android:gravity="center"-->
+        <!--            android:hint="Add a new sighting"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:textSize="18dp"-->
+        <!--            android:textStyle="bold">-->
+
+        <!--        </TextView>-->
+
+        <EditText
+            android:id="@+id/newBird"
+            android:layout_width="333dp"
+            android:layout_height="58dp"
+            android:layout_margin="15dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:hint="Add a new sighting"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/locationBox"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="15dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:hint="Where did you see it?"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/finalAddButton"
+            android:text="Add to your collection"
+            android:background="@drawable/rounded_corner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
