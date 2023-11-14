@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -13,12 +14,12 @@
 
         <TextView
             android:id="@+id/hotspot_name"
-            android:layout_width="wrap_content"
+            android:layout_width="379dp"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="18sp"
             android:textColor="@android:color/black"
-            />
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <ScrollView
             android:id="@+id/observationsScrollView"
             android:layout_width="match_parent"
@@ -94,6 +95,7 @@
             android:layout_width="141dp"
             android:layout_height="wrap_content"
             android:text="Directions"
+            android:backgroundTint="#DFDFDF"
             android:textColor="@android:color/black" />
 
         <Button
@@ -101,13 +103,15 @@
             android:layout_width="139dp"
             android:layout_height="wrap_content"
             android:text="Close"
+            android:backgroundTint="#DFDFDF"
             android:textColor="@android:color/black" />
         <Button
             android:id="@+id/addObservationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#DFDFDF"
+            android:textColor="@color/black"
             android:text="Add Observation" />
-
 
 
     </LinearLayout>

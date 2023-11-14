@@ -25,21 +25,7 @@ class HomePage : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         setContentView(R.layout.activity_home_page)
 
 
-
-
-
-
         val btnExplore = findViewById<ImageButton>(R.id.btn_explore)
-        val btnAdd = findViewById<ImageButton>(R.id.btn_add)
-        val Settings = findViewById<ImageButton>(R.id.btn_settings)
-
-
-
-
-        Settings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
 
 
 
@@ -49,10 +35,6 @@ class HomePage : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         }
 
 
-        btnAdd.setOnClickListener {
-            val intent = Intent(this, ObservationPage::class.java)
-            startActivity(intent)
-        }
 
         //action bar
         drawerLayout = findViewById(R.id.my_drawer_layout)
@@ -88,10 +70,7 @@ class HomePage : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
                 val accountIntent = Intent(this, HomePage::class.java)
                 startActivity(accountIntent)
             }
-            R.id.Activity2 -> {
-                val settingsIntent = Intent(this, ObservationPage::class.java)
-                startActivity(settingsIntent)
-            }
+
             R.id.Activity3 -> {
                 val settingsIntent = Intent(this, MainActivity::class.java)
                 startActivity(settingsIntent)
@@ -101,7 +80,7 @@ class HomePage : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
                 startActivity(accountIntent)
             }
             R.id.Activity5 -> {
-                val accountIntent = Intent(this, HomePage::class.java) //this will be How to use
+                val accountIntent = Intent(this, HowToPage::class.java) //this will be How to use
                 startActivity(accountIntent)
             }
             R.id.Activity6 -> {

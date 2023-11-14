@@ -43,6 +43,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.ref.WeakReference
 import android.graphics.Color
+import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -73,13 +74,19 @@ import com.mapbox.navigation.core.trip.session.RouteProgressObserver
 import com.test.userlocation.SettingsFile.SettingsActivity
 import kotlin.math.*
 import android.widget.LinearLayout
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
     private lateinit var locationPermissionHelper: LocationPermissionHelper
     private lateinit var mapView: MapView
     private lateinit var popupContainer: FrameLayout
+
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
 
     private var userLatitude: Double = 0.0
     private var userLongitude: Double = 0.0
@@ -132,18 +139,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val settingsButton = findViewById<Button>(R.id.settingsButton)
-        val Home = findViewById<Button>(R.id.btn_BackHome)
+        //action bar
+        drawerLayout = findViewById(R.id.my_drawer_layout)
+        actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close)
 
-        settingsButton.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
+        drawerLayout.addDrawerListener(actionBarDrawerToggle)
+        actionBarDrawerToggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        Home.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
-        }
+
+
+        val navigationView: NavigationView = findViewById(R.id.TestNav)
+        navigationView.setNavigationItemSelectedListener(this)
+
+
+
+
         // radius = getRadiusValue().toInt()
 
         mapView = findViewById(R.id.mapView)
@@ -161,6 +172,42 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            true
+        } else super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.Activity1 -> {
+                val accountIntent = Intent(this, HomePage::class.java)
+                startActivity(accountIntent)
+            }
+
+            R.id.Activity3 -> {
+                val settingsIntent = Intent(this, MainActivity::class.java)
+                startActivity(settingsIntent)
+            }
+            R.id.Activity4 -> {
+                val accountIntent = Intent(this, FAQ_Page::class.java) // this will be FAQ
+                startActivity(accountIntent)
+            }
+            R.id.Activity5 -> {
+                val accountIntent = Intent(this, HowToPage::class.java) //this will be How to use
+                startActivity(accountIntent)
+            }
+            R.id.Activity6 -> {
+                val accountIntent = Intent(this, SettingsActivity::class.java)
+                startActivity(accountIntent)
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+
+
 
     private fun onMapReady() {
         mapView.getMapboxMap().setCamera(

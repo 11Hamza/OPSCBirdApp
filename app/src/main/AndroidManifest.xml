@@ -16,6 +16,9 @@
         android:theme="@style/Theme.UserLocation"
         tools:targetApi="31">
         <activity
+            android:name=".HowToPage"
+            android:exported="false" />
+        <activity
             android:name=".FAQ_Page"
             android:exported="false" />
         <activity
